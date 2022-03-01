@@ -7,58 +7,68 @@
 
 <BorderPane maxHeight="500.0" maxWidth="750.0" minHeight="500.0" minWidth="750.0" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Ventana2Controller">
    <center>
-      <AnchorPane prefHeight="259.0" prefWidth="528.0" style="-fx-background-image: url('https://static.wikia.nocookie.net/pokemon-reborn/images/3/31/Icyfield.png/revision/latest?cb=20161005022621'); -fx-background-size: 100% 100%;">
+      <AnchorPane>
          <children>
-            <ImageView fx:id="ene" fitHeight="155.0" fitWidth="163.0" layoutX="506.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="500.0" fitWidth="750.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@abomasnow.gif" />
+                  <Image url="@fondopelea.jpg" />
                </image>
             </ImageView>
-            <ImageView fx:id="pok" fitHeight="176.0" fitWidth="267.0" layoutX="77.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@reshiramespalda.gif" />
-               </image>
-            </ImageView>
-            <Pane layoutX="93.0" layoutY="27.0" prefHeight="83.0" prefWidth="235.0" style="-fx-background-color: #B1EBF5; -fx-border-width: 1; -fx-border-color: #000000; -fx-border-radius: 8; -fx-background-radius: 8;">
+            <AnchorPane prefHeight="259.0" prefWidth="528.0">
                <children>
-                  <ProgressBar fx:id="barravidaene" layoutX="44.0" layoutY="47.0" prefHeight="20.0" prefWidth="174.0" progress="1.0" style="-fx-accent: #44E747;" />
-                  <Label fx:id="nombreene" layoutX="24.0" layoutY="18.0" prefHeight="17.0" prefWidth="150.0" style="-fx-border-width: 5px;" text="Label">
-                     <font>
-                        <Font name="Times New Roman" size="12.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="nivelene" layoutX="183.0" layoutY="17.0" text="Label">
-                     <font>
-                        <Font name="Times New Roman" size="12.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="psene" layoutX="25.0" layoutY="47.0" onMouseEntered="#encimapsene" onMouseExited="#salirpsene" prefHeight="18.0" prefWidth="18.0" text="PS">
-                     <font>
-                        <Font name="Times New Roman" size="12.0" />
-                     </font>
-                  </Label>
+                  <ImageView fx:id="ene" fitHeight="155.0" fitWidth="163.0" layoutX="478.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@abomasnow.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="pok" fitHeight="176.0" fitWidth="267.0" layoutX="98.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@reshiramespalda.gif" />
+                     </image>
+                  </ImageView>
+                  <Pane layoutX="93.0" layoutY="27.0" prefHeight="83.0" prefWidth="235.0" style="-fx-background-color: #B1EBF5; -fx-border-width: 1; -fx-border-color: #000000; -fx-border-radius: 8; -fx-background-radius: 8;">
+                     <children>
+                        <ProgressBar fx:id="barravidaene" layoutX="44.0" layoutY="47.0" prefHeight="20.0" prefWidth="174.0" progress="1.0" style="-fx-accent: #44E747;" />
+                        <Label fx:id="nombreene" layoutX="24.0" layoutY="18.0" prefHeight="17.0" prefWidth="150.0" style="-fx-border-width: 5px;" text="Label">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="nivelene" layoutX="183.0" layoutY="17.0" text="Label">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="psene" layoutX="25.0" layoutY="47.0" onMouseEntered="#encimapsene" onMouseExited="#salirpsene" prefHeight="18.0" prefWidth="18.0" text="PS">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="489.0" layoutY="299.0" prefHeight="83.0" prefWidth="235.0" style="-fx-background-color: #B1EBF5; -fx-border-width: 1; -fx-border-color: #000000; -fx-border-radius: 8; -fx-background-radius: 8;">
+                     <children>
+                        <ProgressBar fx:id="barravidapok" layoutX="44.0" layoutY="47.0" prefHeight="20.0" prefWidth="174.0" progress="1.0" style="-fx-accent: #44E747;" />
+                        <Label fx:id="nombrepok" layoutX="24.0" layoutY="18.0" prefHeight="17.0" prefWidth="150.0" style="-fx-border-width: 5px;" text="Label">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="nivelpok" layoutX="183.0" layoutY="17.0" text="Label">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="pspok" layoutX="26.0" layoutY="47.0" onMouseEntered="#encimapspok" onMouseExited="#salirpspok" prefHeight="18.0" prefWidth="18.0" text="PS">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="216.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true" />
                </children>
-            </Pane>
-            <Pane layoutX="489.0" layoutY="299.0" prefHeight="83.0" prefWidth="235.0" style="-fx-background-color: #B1EBF5; -fx-border-width: 1; -fx-border-color: #000000; -fx-border-radius: 8; -fx-background-radius: 8;">
-               <children>
-                  <ProgressBar fx:id="barravidapok" layoutX="44.0" layoutY="47.0" prefHeight="20.0" prefWidth="174.0" progress="1.0" style="-fx-accent: #44E747;" />
-                  <Label fx:id="nombrepok" layoutX="24.0" layoutY="18.0" prefHeight="17.0" prefWidth="150.0" style="-fx-border-width: 5px;" text="Label">
-                     <font>
-                        <Font name="Times New Roman" size="12.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="nivelpok" layoutX="183.0" layoutY="17.0" text="Label">
-                     <font>
-                        <Font name="Times New Roman" size="12.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="pspok" layoutX="26.0" layoutY="47.0" onMouseEntered="#encimapspok" onMouseExited="#salirpspok" prefHeight="18.0" prefWidth="18.0" text="PS">
-                     <font>
-                        <Font name="Times New Roman" size="12.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </center>
