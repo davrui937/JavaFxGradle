@@ -1,6 +1,11 @@
 package sample;
 
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Objects;
 
 public class Pokemon{
 
@@ -10,13 +15,18 @@ public class Pokemon{
     private int vidaact;
     private Image imagen;
     private Image imagenpelea;
-    public Pokemon(int nivel, String nombre, int vidamax, int vidaact, Image imagen, Image imagenpelea) {
+    private String efecto;
+    private Image estado;
+
+    public Pokemon(int nivel, String nombre, int vidamax, int vidaact, Image imagen, Image imagenpelea, Image estado, String efecto) {
         this.nivel = nivel;
         this.nombre = nombre;
         this.vidamax = vidamax;
         this.vidaact = vidaact;
         this.imagen = imagen;
         this.imagenpelea=imagenpelea;
+        this.estado=estado;
+        this.efecto=efecto;
     }
 
     public int getNivel() {
@@ -51,9 +61,7 @@ public class Pokemon{
         this.vidaact = vidaact;
     }
 
-    public Image getImagen() {
-        return imagen;
-    }
+    public Image getImagen() {return imagen;}
 
     public void setImagen(Image imagen) {
         this.imagen = imagen;
@@ -67,24 +75,66 @@ public class Pokemon{
         this.imagenpelea = imagenpelea;
     }
 
+    public Image getEstado() {
+        return estado;
+    }
 
+    public void setEstado(Image estado) {
+        this.estado = estado;
+    }
+
+    public String getEfecto() {
+        return efecto;
+    }
+
+    public void setEfecto(String efecto) {
+        this.efecto = efecto;
+    }
 
     public void curacion(Pokemon pokemon){
         pokemon.setVidaact((int) (pokemon.getVidaact()+ Math.random()*50 + 25));
         if(pokemon.vidaact>pokemon.vidamax){pokemon.vidaact=pokemon.vidamax;}
+
     }
 
 
     public void ataqueseguro(Pokemon enemigo){
         enemigo.setVidaact(enemigo.getVidaact()-20);
+        if(Objects.equals(enemigo.getEfecto(), "fuego")){
+            enemigo.setVidaact(enemigo.getVidaact()-10);
+            System.out.println("El fuego hace que reciba un 50% mas de daño");
+        }
+
     }
 
-    public void ataquepocoseguro(Pokemon enemigo){
-        enemigo.setVidaact((int) (enemigo.getVidaact()- (Math.random()*15 + 10)));
+    public int ataquepocoseguro(Pokemon enemigo){
+        int dano = (int) (Math.random()*15 + 10);
+        enemigo.setVidaact((enemigo.getVidaact()-dano));
+
+        if(Objects.equals(enemigo.getEfecto(), "fuego")){
+            enemigo.setVidaact(enemigo.getVidaact()-(dano/2));
+            System.out.println("El fuego hace que reciba un 50% mas de daño");
+        }
+
+        if(Objects.equals(enemigo.getEfecto(), "frio")){
+            return dano/2;
+        }
+        return 0;
     }
 
-    public void ataquenadaseguro(Pokemon enemigo){
-        enemigo.setVidaact((int) (enemigo.getVidaact()- Math.random()*51 + 0));
+    public int ataquenadaseguro(Pokemon enemigo){
+        int dano = (int) (Math.random()*51 + 0);
+        enemigo.setVidaact( (enemigo.getVidaact()- dano));
+
+        if(Objects.equals(enemigo.getEfecto(), "fuego")){
+            enemigo.setVidaact(enemigo.getVidaact()-(dano/2));
+            System.out.println("El fuego hace que reciba un 50% mas de daño");
+        }
+
+        if(Objects.equals(enemigo.getEfecto(), "frio")){
+            return dano/2;
+        }
+        return 0;
     }
 
     public boolean estavivo(Pokemon pokemon){

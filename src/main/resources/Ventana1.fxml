@@ -39,7 +39,7 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="barravida00" layoutX="35.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
+                        <ProgressBar fx:id="barravida00" layoutX="54.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
                         <Label fx:id="nivel00" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
@@ -50,11 +50,15 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="17.0" layoutY="169.0" text="PS" textFill="WHITE">
+                        <Label layoutX="32.0" layoutY="169.0" text="PS" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
+                        <ImageView fx:id="estadopok1" fitHeight="26.0" fitWidth="26.0" layoutX="4.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@veneno.png" />
+                           </image></ImageView>
                      </children>
                      <GridPane.margin>
                         <Insets />
@@ -78,22 +82,27 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="barravida10" layoutX="32.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
+                        <ProgressBar fx:id="barravida10" layoutX="54.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
                         <Label fx:id="nivel10" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="vida10" layoutX="23.0" layoutY="185.0" text="inseta vi" textFill="WHITE">
+                        <Label fx:id="vida10" layoutX="35.0" layoutY="185.0" text="inseta vi" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="14.0" layoutY="169.0" text="PS" textFill="WHITE">
+                        <Label layoutX="32.0" layoutY="169.0" text="PS" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
+                        <ImageView fx:id="estadopok2" fitHeight="26.0" fitWidth="26.0" layoutX="4.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@veneno.png" />
+                           </image>
+                        </ImageView>
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -117,22 +126,27 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="barravida20" layoutX="32.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
+                        <ProgressBar fx:id="barravida20" layoutX="54.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
                         <Label fx:id="nivel20" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="vida20" layoutX="23.0" layoutY="185.0" text="inseta vi" textFill="WHITE">
+                        <Label fx:id="vida20" layoutX="35.0" layoutY="185.0" text="inseta vi" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="14.0" layoutY="169.0" text="PS" textFill="WHITE">
+                        <Label layoutX="32.0" layoutY="169.0" text="PS" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
+                        <ImageView fx:id="estadopok3" fitHeight="26.0" fitWidth="26.0" layoutX="4.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@veneno.png" />
+                           </image>
+                        </ImageView>
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -156,22 +170,27 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="barravida01" layoutX="32.0" layoutY="170.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
+                        <ProgressBar fx:id="barravida01" layoutX="54.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
                         <Label fx:id="nivel01" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="vida01" layoutX="32.0" layoutY="183.0" text="inseta vi" textFill="WHITE">
+                        <Label fx:id="vida01" layoutX="35.0" layoutY="185.0" text="inseta vi" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="14.0" layoutY="167.0" text="PS" textFill="WHITE">
+                        <Label layoutX="32.0" layoutY="169.0" text="PS" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
+                        <ImageView fx:id="estadopok4" fitHeight="26.0" fitWidth="26.0" layoutX="4.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@veneno.png" />
+                           </image>
+                        </ImageView>
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -192,22 +211,27 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="barravida11" layoutX="32.0" layoutY="170.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
+                        <ProgressBar fx:id="barravida11" layoutX="54.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
                         <Label fx:id="nivel11" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="vida11" layoutX="23.0" layoutY="183.0" text="inseta vi" textFill="WHITE">
+                        <Label fx:id="vida11" layoutX="35.0" layoutY="185.0" text="inseta vi" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="14.0" layoutY="167.0" text="PS" textFill="WHITE">
+                        <Label layoutX="32.0" layoutY="169.0" text="PS" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
+                        <ImageView fx:id="estadopok5" fitHeight="26.0" fitWidth="26.0" layoutX="4.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@veneno.png" />
+                           </image>
+                        </ImageView>
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -228,22 +252,27 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="barravida21" layoutX="32.0" layoutY="170.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
+                        <ProgressBar fx:id="barravida21" layoutX="54.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
                         <Label fx:id="nivel21" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="vida21" layoutX="23.0" layoutY="183.0" text="inseta vi" textFill="WHITE">
+                        <Label fx:id="vida21" layoutX="35.0" layoutY="185.0" text="inseta vi" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="14.0" layoutY="167.0" text="PS" textFill="WHITE">
+                        <Label layoutX="32.0" layoutY="169.0" text="PS" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
+                        <ImageView fx:id="estadopok6" fitHeight="26.0" fitWidth="26.0" layoutX="4.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@veneno.png" />
+                           </image>
+                        </ImageView>
                      </children>
                      <opaqueInsets>
                         <Insets />

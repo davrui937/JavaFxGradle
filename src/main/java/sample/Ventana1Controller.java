@@ -20,24 +20,24 @@ import java.util.Optional;
 
 public class Ventana1Controller {
 
-
-
+	String efecto;
 	ArrayList <Pokemon> listapokemon = new ArrayList<>();
-	Pokemon pokemon1 = new Pokemon(65,"Reshiram",200,200, new Image(new FileInputStream(".\\src\\main\\resources\\reshiram.png")), new Image(new FileInputStream(".\\src\\main\\resources\\reshiramespalda.gif")));
-	Pokemon pokemon2 = new Pokemon(47,"Banano",200,200,new Image(new FileInputStream(".\\src\\main\\resources\\banano.png")),new Image(new FileInputStream(".\\src\\main\\resources\\bananoespalda.gif")));
-	Pokemon pokemon3 = new Pokemon(32,"Macaco",200,200,new Image(new FileInputStream(".\\src\\main\\resources\\primeape.png")),new Image(new FileInputStream(".\\src\\main\\resources\\primeapeespalda.gif")));
-	Pokemon pokemon4 = new Pokemon(84,"Infernape",200,200,new Image(new FileInputStream(".\\src\\main\\resources\\infernape.png")),new Image(new FileInputStream(".\\src\\main\\resources\\infernapeespalda.gif")));
-	Pokemon pokemon5 = new Pokemon(14,"Rillaboom",200,200,new Image(new FileInputStream(".\\src\\main\\resources\\rillaboom.png")),new Image(new FileInputStream(".\\src\\main\\resources\\rillaboomespalda.gif")));
-	Pokemon pokemon6 = new Pokemon(45,"Slaking",200,200,new Image(new FileInputStream(".\\src\\main\\resources\\slaking.png")),new Image(new FileInputStream(".\\src\\main\\resources\\slakingespalda.gif")));
+	Pokemon pokemon1 = new Pokemon(65,"Reshiram",200,200, new Image(new FileInputStream(".\\src\\main\\resources\\reshiram.png")), new Image(new FileInputStream(".\\src\\main\\resources\\reshiramespalda.gif")),calcularestado(),efecto);
+	Pokemon pokemon2 = new Pokemon(47,"Banano",200,200,new Image(new FileInputStream(".\\src\\main\\resources\\banano.png")),new Image(new FileInputStream(".\\src\\main\\resources\\bananoespalda.gif")),calcularestado(),efecto);
+	Pokemon pokemon3 = new Pokemon(32,"Macaco",200,200,new Image(new FileInputStream(".\\src\\main\\resources\\primeape.png")),new Image(new FileInputStream(".\\src\\main\\resources\\primeapeespalda.gif")),calcularestado(),efecto);
+	Pokemon pokemon4 = new Pokemon(84,"Infernape",200,200,new Image(new FileInputStream(".\\src\\main\\resources\\infernape.png")),new Image(new FileInputStream(".\\src\\main\\resources\\infernapeespalda.gif")),calcularestado(),efecto);
+	Pokemon pokemon5 = new Pokemon(14,"Rillaboom",200,200,new Image(new FileInputStream(".\\src\\main\\resources\\rillaboom.png")),new Image(new FileInputStream(".\\src\\main\\resources\\rillaboomespalda.gif")),calcularestado(),efecto);
+	Pokemon pokemon6 = new Pokemon(45,"Slaking",200,200,new Image(new FileInputStream(".\\src\\main\\resources\\slaking.png")),new Image(new FileInputStream(".\\src\\main\\resources\\slakingespalda.gif")),calcularestado(),efecto);
 
 
 	ArrayList <Pokemon> listaenemigos = new ArrayList<>();
-	Pokemon enemigo1 = new Pokemon(65,"Abomasnow",100,100, new Image(new FileInputStream(".\\src\\main\\resources\\abomasnow.gif")), new Image(new FileInputStream(".\\src\\main\\resources\\reshiramespalda.gif")));
-	Pokemon enemigo2 = new Pokemon(47,"Avalugg",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\avalugg.gif")),new Image(new FileInputStream(".\\src\\main\\resources\\bananoespalda.gif")));
-	Pokemon enemigo3 = new Pokemon(32,"Glaceon",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\glaceon.gif")),new Image(new FileInputStream(".\\src\\main\\resources\\primeapeespalda.gif")));
-	Pokemon enemigo4 = new Pokemon(84,"Weavile",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\weavile.gif")),new Image(new FileInputStream(".\\src\\main\\resources\\infernapeespalda.gif")));
-	Pokemon enemigo5 = new Pokemon(14,"Cloyster",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\cloyster.gif")),new Image(new FileInputStream(".\\src\\main\\resources\\rillaboomespalda.gif")));
+	Pokemon enemigo1 = new Pokemon(65,"Abomasnow",100,100, new Image(new FileInputStream(".\\src\\main\\resources\\abomasnow.gif")), new Image(new FileInputStream(".\\src\\main\\resources\\reshiramespalda.gif")),null,null);
+	Pokemon enemigo2 = new Pokemon(47,"Avalugg",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\avalugg.gif")),new Image(new FileInputStream(".\\src\\main\\resources\\bananoespalda.gif")),null,null);
+	Pokemon enemigo3 = new Pokemon(32,"Glaceon",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\glaceon.gif")),new Image(new FileInputStream(".\\src\\main\\resources\\primeapeespalda.gif")),null,null);
+	Pokemon enemigo4 = new Pokemon(84,"Weavile",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\weavile.gif")),new Image(new FileInputStream(".\\src\\main\\resources\\infernapeespalda.gif")),null,null);
+	Pokemon enemigo5 = new Pokemon(14,"Cloyster",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\cloyster.gif")),new Image(new FileInputStream(".\\src\\main\\resources\\rillaboomespalda.gif")),null,null);
 
+	String estado;
 	Pokemon seleccion=null;
 	@FXML
 	Button botoncontinuar;
@@ -56,6 +56,8 @@ public class Ventana1Controller {
 	Label vida00;
 	@FXML
 	ImageView imagen00;
+	@FXML
+	ImageView estadopok1;
 
 	//Segundo Pokemon
 	@FXML
@@ -70,6 +72,8 @@ public class Ventana1Controller {
 	Label vida10;
 	@FXML
 	ImageView imagen10;
+	@FXML
+	ImageView estadopok2;
 
 	//Tercer Pokemon
 	@FXML
@@ -84,6 +88,8 @@ public class Ventana1Controller {
 	Label vida20;
 	@FXML
 	ImageView imagen20;
+	@FXML
+	ImageView estadopok3;
 
 	//Cuarto Pokemon
 	@FXML
@@ -98,6 +104,9 @@ public class Ventana1Controller {
 	Label vida01;
 	@FXML
 	ImageView imagen01;
+	@FXML
+	ImageView estadopok4;
+
 
 	//Quinto Pokemon
 	@FXML
@@ -112,6 +121,8 @@ public class Ventana1Controller {
 	Label vida11;
 	@FXML
 	ImageView imagen11;
+	@FXML
+	ImageView estadopok5;
 
 	//Sexto Pokemon
 	@FXML
@@ -126,6 +137,8 @@ public class Ventana1Controller {
 	Label vida21;
 	@FXML
 	ImageView imagen21;
+	@FXML
+	ImageView estadopok6;
 
 	public Ventana1Controller() throws FileNotFoundException {
 	}
@@ -145,52 +158,8 @@ public class Ventana1Controller {
 		if(enemigo4.getVidaact()>0){listaenemigos.add(enemigo4);}
 		if(enemigo5.getVidaact()>0){listaenemigos.add(enemigo5);}
 
+		actualizarpokemon();
 
-		//PRIMER POKEMON
-		nombre00.setText(pokemon1.getNombre());
-		String NIVELAUX = "Nv ";
-		nivel00.setText(NIVELAUX +pokemon1.getNivel());
-		barravida00.setProgress(((double) pokemon1.getVidaact()/pokemon1.getVidamax()));
-		vida00.setText(pokemon1.getVidaact()+"/"+ pokemon1.getVidamax());
-		imagen00.setImage(pokemon1.getImagen());
-
-		//SEGUNDO POKEMON
-		nombre10.setText(pokemon2.getNombre());
-		nivel10.setText(NIVELAUX +pokemon2.getNivel());
-		barravida10.setProgress(((double) pokemon2.getVidaact()/pokemon2.getVidamax()));
-		vida10.setText(pokemon2.getVidaact()+"/"+ pokemon2.getVidamax());
-		imagen10.setImage(pokemon2.getImagen());
-
-
-		//TERCERO POKEMON
-		nombre20.setText(pokemon3.getNombre());
-		nivel20.setText(NIVELAUX +pokemon3.getNivel());
-		barravida20.setProgress(((double) pokemon3.getVidaact()/pokemon3.getVidamax()));
-		vida20.setText(pokemon3.getVidaact()+"/"+ pokemon3.getVidamax());
-		imagen20.setImage(pokemon3.getImagen());
-
-
-		//CUARTO POKEMON
-		nombre01.setText(pokemon4.getNombre());
-		nivel01.setText(NIVELAUX +pokemon4.getNivel());
-		barravida01.setProgress(((double) pokemon4.getVidaact()/pokemon4.getVidamax()));
-		vida01.setText(pokemon4.getVidaact()+"/"+ pokemon4.getVidamax());
-		imagen01.setImage(pokemon4.getImagen());
-
-
-		//QUINTO POKEMON
-		nombre11.setText(pokemon5.getNombre());
-		nivel11.setText(NIVELAUX +pokemon5.getNivel());
-		barravida11.setProgress(((double) pokemon5.getVidaact()/pokemon5.getVidamax()));
-		vida11.setText(pokemon5.getVidaact()+"/"+ pokemon5.getVidamax());
-		imagen11.setImage(pokemon5.getImagen());
-
-		//SEXTO POKEMON
-		nombre21.setText(pokemon6.getNombre());
-		nivel21.setText(NIVELAUX +pokemon6.getNivel());
-		barravida21.setProgress(((double) pokemon6.getVidaact()/pokemon6.getVidamax()));
-		vida21.setText(pokemon6.getVidaact()+"/"+ pokemon6.getVidamax());
-		imagen21.setImage(pokemon6.getImagen());
 	}
 
 
@@ -286,6 +255,73 @@ public class Ventana1Controller {
 	private void botonmostrar(){
 		botoncontinuar.setVisible(true);
 	}
+	public Image calcularestado() throws FileNotFoundException {
+		int aux= (int) (Math.random()*3)+1;
+		if (aux==1){
+			efecto="fuego";
+			return new Image(new FileInputStream(".\\src\\main\\resources\\fuego.png"));
+		}else if(aux==2){
+			efecto="veneno";
+			return new Image(new FileInputStream(".\\src\\main\\resources\\veneno.png"));
+		}else{
+			efecto="frio";
+			return new Image(new FileInputStream(".\\src\\main\\resources\\frio.png"));
+		}
+	}
+
+	public void actualizarpokemon(){
+		//PRIMER POKEMON
+		nombre00.setText(pokemon1.getNombre());
+		String NIVELAUX = "Nv ";
+		nivel00.setText(NIVELAUX +pokemon1.getNivel());
+		barravida00.setProgress(((double) pokemon1.getVidaact()/pokemon1.getVidamax()));
+		vida00.setText(pokemon1.getVidaact()+"/"+ pokemon1.getVidamax());
+		imagen00.setImage(pokemon1.getImagen());
+		estadopok1.setImage(pokemon1.getEstado());
+
+		//SEGUNDO POKEMON
+		nombre10.setText(pokemon2.getNombre());
+		nivel10.setText(NIVELAUX +pokemon2.getNivel());
+		barravida10.setProgress(((double) pokemon2.getVidaact()/pokemon2.getVidamax()));
+		vida10.setText(pokemon2.getVidaact()+"/"+ pokemon2.getVidamax());
+		imagen10.setImage(pokemon2.getImagen());
+		estadopok2.setImage(pokemon2.getEstado());
+
+
+		//TERCERO POKEMON
+		nombre20.setText(pokemon3.getNombre());
+		nivel20.setText(NIVELAUX +pokemon3.getNivel());
+		barravida20.setProgress(((double) pokemon3.getVidaact()/pokemon3.getVidamax()));
+		vida20.setText(pokemon3.getVidaact()+"/"+ pokemon3.getVidamax());
+		imagen20.setImage(pokemon3.getImagen());
+		estadopok3.setImage(pokemon3.getEstado());
+
+		//CUARTO POKEMON
+		nombre01.setText(pokemon4.getNombre());
+		nivel01.setText(NIVELAUX +pokemon4.getNivel());
+		barravida01.setProgress(((double) pokemon4.getVidaact()/pokemon4.getVidamax()));
+		vida01.setText(pokemon4.getVidaact()+"/"+ pokemon4.getVidamax());
+		imagen01.setImage(pokemon4.getImagen());
+		estadopok4.setImage(pokemon4.getEstado());
+
+
+		//QUINTO POKEMON
+		nombre11.setText(pokemon5.getNombre());
+		nivel11.setText(NIVELAUX +pokemon5.getNivel());
+		barravida11.setProgress(((double) pokemon5.getVidaact()/pokemon5.getVidamax()));
+		vida11.setText(pokemon5.getVidaact()+"/"+ pokemon5.getVidamax());
+		imagen11.setImage(pokemon5.getImagen());
+		estadopok5.setImage(pokemon5.getEstado());
+
+		//SEXTO POKEMON
+		nombre21.setText(pokemon6.getNombre());
+		nivel21.setText(NIVELAUX +pokemon6.getNivel());
+		barravida21.setProgress(((double) pokemon6.getVidaact()/pokemon6.getVidamax()));
+		vida21.setText(pokemon6.getVidaact()+"/"+ pokemon6.getVidamax());
+		imagen21.setImage(pokemon6.getImagen());
+		estadopok6.setImage(pokemon6.getEstado());
+	}
+
 
 	private void botonocultar(){
 		botoncontinuar.setVisible(false);

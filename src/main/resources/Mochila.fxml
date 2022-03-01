@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #61B7F0;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MochilaController">
+   <center>
+      <GridPane style="-fx-background-color: #85DAF9;" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane onMouseClicked="#clickfuego" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="fuego" fitHeight="90.0" fitWidth="90.0" layoutX="14.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@fuego.png" />
+                     </image></ImageView>
+                  <Label layoutX="112.0" layoutY="28.0" text="Antiquemaduras" />
+                  <Label alignment="TOP_LEFT" layoutX="118.0" layoutY="51.0" prefHeight="82.0" prefWidth="212.0" text="Esta pocion se encarga de curar a tu pokemon de las quemaduras sufridas durante un combate." wrapText="true" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="10.0" onMouseClicked="#clickveneno" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fx:id="veneno" fitHeight="90.0" fitWidth="90.0" layoutX="14.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@veneno.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="112.0" layoutY="28.0" text="Antidoto" />
+                  <Label alignment="TOP_LEFT" layoutX="118.0" layoutY="51.0" prefHeight="82.0" prefWidth="212.0" text="Esta pocion se encarga de curar a tu pokemon del estado de envenenado." wrapText="true" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="161.0" onMouseClicked="#clickfrio" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fx:id="frio" fitHeight="90.0" fitWidth="90.0" layoutX="14.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@frio.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="112.0" layoutY="28.0" text="Descongelador" />
+                  <Label alignment="TOP_LEFT" layoutX="118.0" layoutY="51.0" prefHeight="82.0" prefWidth="212.0" text="Esta pocion se encarga de curar a tu pokemon el estado de congelado." wrapText="true" />
+               </children>
+            </AnchorPane>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </center>
+   <top>
+      <Label text="Mochila" underline="true" BorderPane.alignment="CENTER">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+         <padding>
+            <Insets bottom="4.0" />
+         </padding>
+      </Label>
+   </top>
+</BorderPane>

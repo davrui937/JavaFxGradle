@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Optional;
 
 public class Ventana2Controller {
@@ -48,23 +49,27 @@ public class Ventana2Controller {
     }
 
 
+    public void actualizarpelea(){
+    nombrepok.setText(pokemon.getNombre());
+    nivelpok.setText(nivelaux +pokemon.getNivel());
+    barravidapok.setProgress(((double) pokemon.getVidaact()/pokemon.getVidamax()));
+    pok.setImage(pokemon.getImagenpelea());
+    estadopok.setImage(pokemon.getEstado());
+    nombreene.setText(enemigo.getNombre());
+    nivelene.setText(nivelaux +enemigo.getNivel());
+    barravidaene.setProgress(((double) enemigo.getVidaact()/enemigo.getVidamax()));
+    ene.setImage(enemigo.getImagen());
+}
 
     public void pasarPokemon(Pokemon pokemon, Pokemon enemigo) {
         this.pokemon=pokemon;
         this.enemigo=enemigo;
+        actualizarpelea();
 
-        nombrepok.setText(pokemon.getNombre());
-        nivelpok.setText(nivelaux +pokemon.getNivel());
-        barravidapok.setProgress(((double) pokemon.getVidaact()/pokemon.getVidamax()));
-        pok.setImage(pokemon.getImagenpelea());
-
-        nombreene.setText(enemigo.getNombre());
-        nivelene.setText(nivelaux +enemigo.getNivel());
-        barravidaene.setProgress(((double) enemigo.getVidaact()/enemigo.getVidamax()));
-        ene.setImage(enemigo.getImagen());
     }
 
-
+    @FXML
+    Button botonmochila;
     @FXML
     Button botonatacar;
     @FXML
@@ -89,6 +94,8 @@ public class Ventana2Controller {
      ProgressBar barravidapok;
      @FXML
      ImageView pok;
+     @FXML
+     ImageView estadopok;
 
      @FXML
      Label nombreene;
@@ -116,6 +123,29 @@ public class Ventana2Controller {
     actualizarvida(barravidaene,enemigo);
     }
 
+    private MochilaController m = null;
+    public Stage stage2 = null;
+    @FXML
+    private void clickmochila(){
+        try {
+            if (stage2 == null || !stage2.isShowing()) {
+                stage2 = new Stage();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Mochila.fxml"));
+                BorderPane root = loader.load();
+                Scene scene = new Scene(root, 400,500);
+                stage2.setResizable(false);
+                stage2.setScene(scene);
+                stage2.show();
+
+                m = loader.getController();
+                m.recibirpokemon(pokemon);
+                m.recibircontrolador(this);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     @FXML
     private void clickatacar(){
 
@@ -125,6 +155,7 @@ public class Ventana2Controller {
         botoncancelar.setVisible(true);
         botonatacar.setVisible(false);
         botoncurarse.setVisible(false);
+        botonmochila.setVisible(false);
 
     }
 
@@ -136,13 +167,21 @@ public class Ventana2Controller {
         botoncancelar.setVisible(false);
         botonatacar.setVisible(true);
         botoncurarse.setVisible(true);
+        botonmochila.setVisible(true);
     }
 
     @FXML
     private void clickseguro(){
-
+        if(Objects.equals(pokemon.getEfecto(), "veneno")){
+            pokemon.setVidaact(pokemon.getVidaact()-10);
+            System.out.println("El veneno le resta -10");
+        }
         if(enemigo.estavivo(pokemon)){
         pokemon.ataqueseguro(enemigo);
+            if(Objects.equals(pokemon.getEfecto(), "frio")){
+                enemigo.setVidaact(enemigo.getVidaact()+(10));
+                System.out.println("El hielo hace que realice un 50% menos de daño");
+            }
         actualizarvida(barravidaene,enemigo);
         pokemon.estavivo(enemigo);}
         else {alertaMuerte(pokemon);}
@@ -163,9 +202,17 @@ public class Ventana2Controller {
 
     @FXML
     private void clickarriesgado(){
-
+        int aux=0;
+        if(Objects.equals(pokemon.getEfecto(), "veneno")){
+            pokemon.setVidaact(pokemon.getVidaact()-10);
+            System.out.println("El veneno le resta -10");
+        }
         if(enemigo.estavivo(pokemon)){
-        pokemon.ataquepocoseguro(enemigo);
+        aux=pokemon.ataquepocoseguro(enemigo);
+            if(Objects.equals(pokemon.getEfecto(), "frio")){
+                enemigo.setVidaact(enemigo.getVidaact()+(aux));
+                System.out.println("El hielo hace que realice un 50% menos de daño");
+            }
         actualizarvida(barravidaene,enemigo);
         pokemon.estavivo(enemigo);}
         else {alertaMuerte(pokemon);}
@@ -184,9 +231,17 @@ public class Ventana2Controller {
     }
     @FXML
     private void clickmuyarriesgado(){
-
+        int aux=0;
         if (enemigo.estavivo(pokemon)) {
-        pokemon.ataquenadaseguro(enemigo);
+            if(Objects.equals(pokemon.getEfecto(), "veneno")){
+                pokemon.setVidaact(pokemon.getVidaact()-10);
+                System.out.println("El veneno le resta -10");
+            }
+        aux=pokemon.ataquenadaseguro(enemigo);
+            if(Objects.equals(pokemon.getEfecto(), "frio")){
+                enemigo.setVidaact(enemigo.getVidaact()+(aux));
+                System.out.println("El hielo hace que realice un 50% menos de daño");
+            }
         actualizarvida(barravidaene,enemigo);
         pokemon.estavivo(enemigo);}
 
